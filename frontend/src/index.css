@@ -1,0 +1,521 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* layout */
+:root {
+    --good: #1aac83;
+    --error: #e7195a;
+    --primary: rgb(0, 85, 255);
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #777;
+    border-radius: 20px;
+}
+
+.error {
+    color: var(--error);
+}
+
+.good {
+    color: var(--good);
+}
+
+.primary {
+    color: var(--primary);
+}
+
+body {
+    background: #f1f1f1;
+    margin: 0;
+    font-family: "Poppins";
+}
+
+/* App.css */
+
+.app {
+    background: #f1f1f1;
+    margin: 0;
+    font-family: "Poppins";
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.app.loaded {
+    opacity: 1;
+}
+
+/* Navbar */
+
+header {
+    background: #fff;
+}
+
+header>.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+header>.container nav {
+    display: flex;
+    gap: 10px;
+}
+
+header>.container>nav>a {
+    color: #333;
+    transition: color 400ms, color 400ms;
+}
+
+header>.container>nav>a:hover {
+    color: var(--good);
+}
+
+header>.container>a {
+    color: #333;
+    text-decoration: none;
+}
+
+.pages {
+    max-width: 1400px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+/* Home */
+
+.home>.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    margin-top: 35px;
+}
+
+.home>.row>.intro {
+    flex: 1;
+    margin: 0px auto;
+}
+
+.home>.row>.statistic {
+    width: 250px;
+    margin-top: 30px;
+    margin-right: 60px;
+}
+
+.intro>p {
+    text-align: justify;
+    max-width: 1000px;
+    text-indent: 50px;
+    margin: 0px auto;
+}
+
+/* recordDetails */
+
+.row-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.money-tracker {
+    flex: 1;
+    overflow-y: auto;
+    height: 705px;
+}
+
+.money-tracker::-webkit-scrollbar {
+    width: 5px;
+}
+
+.money-tracker::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.money-tracker::-webkit-scrollbar-thumb {
+    background-color: #777;
+    border-radius: 20px;
+}
+
+.record-details {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    padding-left: 20px;
+    padding-bottom: 0px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.record-details .expense {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+    color: var(--error);
+}
+
+.record-details .income {
+    margin: 0;
+    font-size: 1.2em;
+    color: var(--good);
+}
+
+.record-details h5 {
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.record-details .description {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.record-details .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.record-details .amount {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.record-details span {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    background: #f1f1f1;
+    padding: 6px;
+    border-radius: 50%;
+    color: #333;
+}
+
+.record-details .datetime {
+    font-size: small;
+}
+
+.no-record {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.no-record img {
+    width: 500px;
+    height: 500px;
+    margin-bottom: 40px;
+}
+
+/* details-icons */
+
+.delete:hover {
+    background-color: var(--error);
+    color: #fff;
+}
+
+.delete {
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    border-radius: 50%;
+    color: var(--error);
+    cursor: pointer;
+    transition: background-color 300ms, color 300ms;
+}
+
+.sign {
+    width: 15px;
+    height: 15px;
+    padding: 2px;
+    margin-right: 5px;
+    border-radius: 50%;
+    background-color: gold;
+    transition: background-color 300ms, color 300ms;
+}
+
+.mini-up {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    color: var(--good);
+    align-self: first baseline;
+}
+
+.mini-down {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    color: var(--error);
+    align-self: first baseline;
+}
+
+/* RecordForm */
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    height: fit-content;
+}
+
+.form-container h3 {
+    margin-top: 0px;
+}
+
+form {
+    display: flex;
+    width: 400px;
+    flex-direction: column;
+}
+
+label {
+    font-size: medium;
+}
+
+label,
+input {
+    display: block;
+}
+
+input {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: large;
+}
+
+form select {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: large;
+}
+
+form select option {
+    font-size: large;
+}
+
+
+form button {
+    background: var(--primary);
+    border: 0;
+    color: #fff;
+    padding: 10px;
+    font-family: "Poppins";
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px auto;
+}
+
+div.error {
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background: #ffefef;
+    border: 1px solid var(--error);
+    color: var(--error);
+    border-radius: 4px;
+    margin: 10px auto;
+}
+
+input.good,
+select.good {
+    border: 1px solid var(--good);
+}
+
+input.error,
+select.error {
+    border: 1px solid var(--error);
+}
+
+/* Statistic */
+
+.statistic {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    height: fit-content;
+    width: 250px;
+    margin: 0px 20px 20px 0px;
+}
+
+.statistic img {
+    margin: 5px auto;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.statistic p {
+    margin: 5px 0px;
+}
+
+.statistic h2 {
+    margin-top: 0px;
+    text-align: center;
+}
+
+.statistic span.error {
+    color: var(--error);
+}
+
+.statistic span.good {
+    color: var(--good);
+}
+
+.statistic span.primary {
+    color: var(--primary);
+}
+
+.statistic table {
+    width: 100%;
+}
+
+.statistic table td:nth-child(3) {
+    padding-top: 10px;
+    text-align: right;
+}
+
+.statistic table td:nth-child(4) {
+    font-weight: 600;
+}
+
+@keyframes fadeInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fadeInFromLeft {
+    padding-top: 10px;
+    animation: fadeInFromLeft 1s ease-out;
+}
+
+@keyframes easeInNthChild {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.statistic td:nth-child(4) {
+    font-weight: 600;
+    overflow: hidden;
+    opacity: 0;
+    animation: easeInNthChild 0.5s ease-in 0.6s forwards;
+}
+
+/* ChartComponent */
+
+.chart-row {
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.chart-container {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hide {
+    height: 10px;
+}
+
+canvas {
+    width: 600px;
+    height: 300px;
+    box-sizing: border-box;
+}
+
+.no-graph {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.no-graph video {
+    width: 500px;
+    height: 500px;
+    margin-bottom: 40px;
+}
+
+/* ScrollToTopButton */
+
+.scroll-to-top-button {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary);
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-to-top-button.visible {
+    opacity: 1;
+}
